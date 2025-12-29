@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Gestion des Personnes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Gestion des Personnes (Frontend REST)</h1>
+<p class="small">
+    Utilise les services REST JAX‑RS du backend pour lister, ajouter, modifier, supprimer et rechercher des personnes.
+</p>
+
+<div class="container">
+    <!-- Liste des personnes -->
+    <div class="card">
+        <h2>Liste des personnes</h2>
+        <button id="btnLoadAll">Charger toutes les personnes</button>
+        <div id="statusList" class="status" style="display:none;"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Âge</th>
+                </tr>
+            </thead>
+            <tbody id="personsTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Ajouter une personne -->
+    <div class="card">
+        <h2>Ajouter une personne</h2>
+        <label for="addName">Nom</label>
+        <input type="text" id="addName">
+
+        <label for="addAge">Âge</label>
+        <input type="number" id="addAge" min="0">
+
+        <button id="btnAdd">Ajouter</button>
+        <div id="statusAdd" class="status" style="display:none;"></div>
+    </div>
+
+    <!-- Modifier une personne -->
+    <div class="card">
+        <h2>Modifier une personne</h2>
+        <label for="updateId">ID</label>
+        <input type="number" id="updateId" min="0">
+
+        <label for="updateName">Nouveau nom</label>
+        <input type="text" id="updateName">
+
+        <label for="updateAge">Nouvel âge</label>
+        <input type="number" id="updateAge" min="0">
+
+        <button id="btnUpdate">Mettre à jour</button>
+        <div id="statusUpdate" class="status" style="display:none;"></div>
+    </div>
+
+    <!-- Supprimer une personne -->
+    <div class="card">
+        <h2>Supprimer une personne</h2>
+        <label for="deleteId">ID</label>
+        <input type="number" id="deleteId" min="0">
+
+        <button id="btnDelete">Supprimer</button>
+        <div id="statusDelete" class="status" style="display:none;"></div>
+    </div>
+
+    <!-- Recherche par ID -->
+    <div class="card">
+        <h2>Rechercher par ID</h2>
+        <label for="searchId">ID</label>
+        <input type="number" id="searchId" min="0">
+
+        <button id="btnSearchId">Chercher</button>
+        <div id="statusSearchId" class="status" style="display:none;"></div>
+        <div id="resultSearchId" class="small"></div>
+    </div>
+
+    <!-- Recherche par nom -->
+    <div class="card">
+        <h2>Rechercher par nom</h2>
+        <label for="searchName">Nom</label>
+        <input type="text" id="searchName">
+
+        <button id="btnSearchName">Chercher</button>
+        <div id="statusSearchName" class="status" style="display:none;"></div>
+        <div id="resultSearchName" class="small"></div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
